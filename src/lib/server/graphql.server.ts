@@ -1,6 +1,6 @@
 import axios from "axios"
 import https from "https";
-import type { QueryResponse } from "./models";
+import type { QueryResponse } from "../models";
 
 const graphqlEndpoint = "https://localhost:7122/graphql";
 const httpsAgent = new https.Agent({ rejectUnauthorized: false });

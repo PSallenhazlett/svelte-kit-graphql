@@ -1,4 +1,4 @@
-import type { Superhero, SuperheroResponse } from "./models";
+import type { Superhero, SuperheroResponse } from "../models";
 import { executeGraphQL } from './graphql.server';
 
 const superheroFragment = `#graphql
