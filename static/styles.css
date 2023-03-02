@@ -1,0 +1,46 @@
+#body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.superhero-list {
+    list-style-type: none;
+    padding: 0;
+
+}
+
+.superhero-list .superhero a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.superhero-list .superhero a:hover {
+    text-decoration: underline;
+}
+
+.nav {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav:hover {
+    text-decoration: underline;
+}
+
+.nav-left::before {
+    content: '← '
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-size: 1.2em;
+}
+
+.form-field {
+}
