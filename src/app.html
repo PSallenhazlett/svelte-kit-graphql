@@ -7,9 +7,19 @@
 		<meta name="viewport" content="width=device-width" />
 		%sveltekit.head%
 	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">
-			<div id="body">
+	<body data-sveltekit-preload-data="hover" style="display: contents">
+		<div id="body">
+			<header id="header">
+				<h1 id="title">Svelte Kit GraphQL</h1>
+				
+				<nav id="header-nav">
+					<a class="nav-item" href="/about">About</a>
+					<a class="nav-item" href="/superhero">Superheroes</a>
+					<a class="nav-item" href="/superpower">Superpowers</a>
+				</nav>
+			</header>
+
+			<div id="contents">
 				%sveltekit.body%
 			</div>
 		</div>

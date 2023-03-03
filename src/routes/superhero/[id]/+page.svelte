@@ -8,7 +8,7 @@
 
 <div class="superhero">
   <div class="superhero-id form-group">
-    <div class="form-label">Id:</div> 
+    <div class="form-label">Id:</div>
     <div class="form-field">{id}</div>
   </div>
 
