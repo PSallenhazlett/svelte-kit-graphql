@@ -1,11 +1,14 @@
-import * as db from '$lib/server/superpower.server';
-import * as superheroService from "$lib/server/superhero.server";
+import * as superpowerService from '$lib/server/superpower.service';
+import * as superheroService from "$lib/server/superhero.service";
  
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
+  /** @type {import('$lib/models').Superpower} */
+  const superPower = await superpowerService.getSuperpower(params.id)
+
   return {
     id: params.id,
-    superpower: await db.getSuperpower(params.id),
-    superheroes: await superheroService.getSuperheroes()
+    superpower: superPower,
+    superhero: await superheroService.getSuperhero(superPower.superheroId),
   };
 }

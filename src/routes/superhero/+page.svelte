@@ -2,6 +2,7 @@
     /** @type {import('./$types').PageData} */
     export let data;
 
+    /** @type {import('$lib/models').Superhero[]} */
     let superheroes = data.superheroes;
 </script>
 

@@ -1,7 +1,5 @@
 <script>
-    /** @type {import('./$types').PageData} */
-    export let data;
-
+    /** @type {import('$lib/models').Superhero} */
     $: superhero = {
       id: "",
       name: "",

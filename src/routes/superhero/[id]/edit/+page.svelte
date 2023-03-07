@@ -3,6 +3,8 @@
     export let data;
 
     let id = data.id;
+
+    /** @type {import('$lib/models').Superhero} */
     $: superhero = data.superhero;
 </script>
 

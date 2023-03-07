@@ -1,13 +1,7 @@
-import * as db from '$lib/server/superhero.server';
+import * as superheroService from '$lib/server/superhero.service';
 import { redirect } from '@sveltejs/kit';
- 
-/** @type {import('../[id]/edit/$types').PageServerLoad} */
-export async function load({ params }) {
-  return {
-  };
-}
 
-/** @type {import('../[id]/edit/$types').Actions} */
+/** @type {import('./$types').Actions} */
 export const actions = {
   default: async ({ cookies, request }) => {
     const data = await request.formData();
@@ -18,7 +12,7 @@ export const actions = {
     superhero.movies = [];
     superhero.superpowers = [];
 
-    await db.createSuperhero(superhero);
+    await superheroService.createSuperhero(superhero);
 
     throw redirect(302, '/superhero');
   }

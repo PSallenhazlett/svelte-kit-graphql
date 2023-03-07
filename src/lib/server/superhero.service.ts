@@ -1,5 +1,12 @@
-import type { CreateSuperheroResponse, Superhero, SuperheroResponse, UpdateSuperheroResponse } from "../models";
-import { executeGraphQL } from './graphql.server';
+import type { 
+    CreateSuperheroResponse, 
+    UpdateSuperheroResponse,
+    DeleteSuperheroResponse,
+    DeleteSuperhero,
+    Superhero, 
+    SuperheroResponse 
+} from "../models";
+import { executeGraphQL } from './graphql.service';
 
 const superheroFragment = `#graphql
     fragment SuperheroFields on Superhero {
@@ -85,7 +92,7 @@ export async function updateSuperhero(superhero: Superhero): Promise<Superhero> 
     return response.data.updateSuperhero;
 }
 
-export async function deleteSuperhero(id: String): Promise<Superhero> {
+export async function deleteSuperhero(id: String): Promise<DeleteSuperhero> {
     const body = `#graphql
         mutation DeleteSuperhero($id: UUID!){
             deleteSuperhero(id: $id) {
@@ -95,9 +102,9 @@ export async function deleteSuperhero(id: String): Promise<Superhero> {
         }
     `;
     
-    const response = await executeGraphQL<UpdateSuperheroResponse>(body, {
+    const response = await executeGraphQL<DeleteSuperheroResponse>(body, {
         id: id
     });
 
-    return response.data.updateSuperhero;
+    return response.data.deleteSuperhero;
 }

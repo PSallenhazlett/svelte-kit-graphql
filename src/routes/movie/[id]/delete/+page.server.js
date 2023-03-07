@@ -1,4 +1,4 @@
-import * as superheroService from '$lib/server/superhero.service';
+import * as movieService from '$lib/server/movie.service';
 import { redirect } from '@sveltejs/kit';
 
 /** @type {import('./$types').PageServerLoad} */
@@ -17,8 +17,8 @@ export const actions = {
       const data = await request.formData();
       
       const id = data.get('id');
-      await superheroService.deleteSuperhero(id?.toString() ?? "");
+      await movieService.deleteMovie(id?.toString() ?? "");
       
-      throw redirect(302, '/superhero');
+      throw redirect(302, '/movie');
     }
   };
