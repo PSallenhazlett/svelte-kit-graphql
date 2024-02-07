@@ -1,29 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<link rel="stylesheet" href="%sveltekit.assets%/styles.css" />
-		<meta name="viewport" content="width=device-width" />
-		%sveltekit.head%
-	</head>
-	
-	<body data-sveltekit-preload-data="hover" style="display: contents">
-		<div id="body">
-			<header id="header">
-				<h1 id="title">Svelte Kit GraphQL</h1>
-				
-				<nav id="header-nav">
-					<a class="nav-item" href="/about">About</a>
-					<a class="nav-item" href="/superhero">Superheroes</a>
-					<a class="nav-item" href="/superpower">Superpowers</a>
-					<a class="nav-item" href="/movie">Movies</a>
-				</nav>
-			</header>
 
-			<div id="contents">
-				%sveltekit.body%
-			</div>
-		</div>
-	</body>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+  <link rel="stylesheet" href="%sveltekit.assets%/styles.css" />
+  <meta name="viewport" content="width=device-width" />
+  %sveltekit.head%
+</head>
+
+<body data-sveltekit-preload-data="hover" style="display: contents">
+  <div id="body">
+
+    <header>
+      <div class="min-h-full">
+        <nav class="bg-nav">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+              <div class="flex items-center">
+                <div class="flex-shrink-0">
+                  <h1 id="title">Svelte Kit GraphQL</h1>
+                </div>
+
+                <div class="hidden md:block">
+                  <div class="ml-10 flex items-baseline space-x-4">
+                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                    <a href="/about" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
+                    <a href="/superhero" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Superheroes</a>
+                    <a href="/superpower" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Superpowers</a>
+                    <a href="/movie" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Movies</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:hidden" id="mobile-menu">
+            <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              <a href="/about" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">About</a>
+              <a href="/superhero" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Superheroes</a>
+              <a href="/superpower" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Superpowers</a>
+              <a href="/movie" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Movies</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+        %sveltekit.body%
+      </div>
+    </main>
+  </div>
+</body>
+
 </html>
