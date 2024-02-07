@@ -1,4 +1,6 @@
 <script>
+    import "../../app.css"
+
     /** @type {import('./$types').PageData} */
     export let data;
 
